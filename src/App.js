@@ -11,19 +11,16 @@ import {observer} from "mobx-react-lite";
 import {useTelegram} from "./Hooks/useTelegram";
 
 const App = observer(() => {
-    // Detect if the user has dark mode turned on
-    let userDarkModeApplied = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-    ).matches;
 
-    const {expandApp} = useTelegram();
+
+    const {expandApp, colorScheme} = useTelegram();
     const {isLoading, songs} = AudioStore;
     // UI Components State
     const [uiState, setUiState] = useState({
         aboutShown: false,
         libraryShown: false,
         libraryPinned: false,
-        darkMode: userDarkModeApplied ? true : false,
+        darkMode: colorScheme === "dark" ? true : false,
         coverSpinning: false,
         songPlaying: false,
         seekWidth: 0,

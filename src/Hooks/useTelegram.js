@@ -14,6 +14,10 @@ export function useTelegram(){
         tg?.expand()
     }
 
+    const colorScheme = () =>{
+        return tg?.colorScheme;
+    }
+
     const closeApp = () =>{
         tg?.close()
     }
@@ -25,7 +29,8 @@ export function useTelegram(){
         showTelegramConfirm,
         showTelegramAlert,
         expandApp,
-        closeApp
+        closeApp,
+        colorScheme
     }
 }
 
