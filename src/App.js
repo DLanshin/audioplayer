@@ -40,9 +40,8 @@ const App = observer(() => {
                 ...songState,
                 currentSong: [AudioStore.songs[0]]
             })
-            console.log(songs)
         });
-    },[]);
+    },[songs]);
     // Reference for the audio
     const audioRef = useRef(null);
 
