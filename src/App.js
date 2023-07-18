@@ -8,6 +8,7 @@ import Library from "./Layouts/Library";
 import About from "./Layouts/About";
 import AudioStore from "./Store/AudioStore";
 import {observer} from "mobx-react-lite";
+import {useTelegram} from "./Hooks/useTelegram";
 
 const App = observer(() => {
     // Detect if the user has dark mode turned on
@@ -15,6 +16,7 @@ const App = observer(() => {
         "(prefers-color-scheme: dark)"
     ).matches;
 
+    const {expandApp} = useTelegram();
     const {isLoading, songs} = AudioStore;
     // UI Components State
     const [uiState, setUiState] = useState({
@@ -35,6 +37,7 @@ const App = observer(() => {
     });
 
     useEffect(()=>{
+        expandApp();
         AudioStore.fetch().then(()=>{
             setSongState({
                 ...songState,
@@ -72,7 +75,6 @@ const App = observer(() => {
     if(isLoading || !songState.currentSong.length || !AudioStore.songs){
         return (<></>)
     }
-    console.log(songState.currentSong)
     return (
         <div
             className={`app__wrapper ${

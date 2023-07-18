@@ -1,18 +1,18 @@
 import React from "react";
-import songData from "../../Data/SongData";
 import LibrarySongArtist from "../../Elements/Library/LibrarySongArtist";
 import LibrarySongCover from "../../Elements/Library/LibrarySongCover";
 import LibrarySongTitle from "../../Elements/Library/LibrarySongTitle";
+import AudioStore from "../../Store/AudioStore";
 
 function LibraryListItem({ song, setSongState, songState, audioRef }) {
-    // console.log(song.id === songState.currentSong[0].id);
-    // currentSong: [songData[(currentIndex + 1) % songData.length]],
+
+    const {songs} = AudioStore;
 
     const changeCurrentSongHandler = () => {
         setTimeout(() => {
             setSongState({
                 ...songState,
-                currentSong: [songData[songData.findIndex((s) => s === song)]],
+                currentSong: [songs[songs.findIndex((s) => s === song)]],
             });
             console.log(songState.isPlaying);
             if (songState.isPlaying) {
