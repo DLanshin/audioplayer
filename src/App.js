@@ -41,7 +41,7 @@ const App = observer(() => {
                 currentSong: [AudioStore.songs[0]]
             })
         });
-    },[songs]);
+    },[]);
     // Reference for the audio
     const audioRef = useRef(null);
 
