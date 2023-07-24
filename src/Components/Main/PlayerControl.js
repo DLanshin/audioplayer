@@ -8,6 +8,7 @@ import {
 } from "react-icons/ri";
 import songData from "../../Data/SongData";
 import PlayerPlayButton from "../../Elements/Main/PlayerPlayButton";
+import AudioStore from "../../Store/AudioStore";
 
 function PlayerControl({
     uistate,
@@ -16,22 +17,24 @@ function PlayerControl({
     setSongState,
     audioRef,
 }) {
+    const {isLoading, songs} = AudioStore;
+
     let currentIndex = songData.findIndex(
         (song) => song === songState.currentSong[0]
     );
 
     const previousSongHandler = () => {
         setTimeout(() => {
-            if ((currentIndex - 1) % songData.length === -1) {
+            if ((currentIndex - 1) % songs.length === -1) {
                 setSongState({
                     ...songState,
-                    currentSong: [songData[songData.length - 1]],
+                    currentSong: [songs[songs.length - 1]],
                 });
             } else {
                 setSongState({
                     ...songState,
                     currentSong: [
-                        songData[(currentIndex - 1) % songData.length],
+                        songs[(currentIndex - 1) % songs.length],
                     ],
                 });
             }
@@ -50,7 +53,7 @@ function PlayerControl({
         setTimeout(() => {
             setSongState({
                 ...songState,
-                currentSong: [songData[(currentIndex + 1) % songData.length]],
+                currentSong: [songs[(currentIndex + 1) % songs.length]],
             });
             if (songState.isPlaying) {
                 audioRef.current.play();
@@ -72,7 +75,7 @@ function PlayerControl({
     const songEndHandler = async () => {
         await setSongState({
             ...songState,
-            currentSong: [songData[(currentIndex + 1) % songData.length]],
+            currentSong: [songs[(currentIndex + 1) % songs.length]],
         });
         if (songState.currentSong[0].isPlaying) {
             const playPromise = audioRef.current.play();
