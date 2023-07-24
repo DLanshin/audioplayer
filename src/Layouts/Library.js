@@ -3,23 +3,26 @@ import LibraryHeader from "../Components/Library/LibraryHeader";
 import LibraryListItem from "../Components/Library/LibraryListItem";
 
 function Library({
-    uiState,
+    uistate,
     setUiState,
     setSongState,
     songState,
     songData,
     audioRef,
 }) {
+    console.log(songData[0])
+
     return (
         <div
             className={`library ${
-                uiState.libraryShown ? "" : "library--hidden"
+                uistate.libraryShown ? "" : "library--hidden"
             }`}
         >
-            <LibraryHeader uiState={uiState} setUiState={setUiState} />
+            <LibraryHeader uistate={uistate} setUiState={setUiState} />
             <div className="library__wrapper">
                 {songData.map((song) => (
                     <LibraryListItem
+                        key={song.id}
                         song={song}
                         songState={songState}
                         setSongState={setSongState}

@@ -1,9 +1,9 @@
 import React from "react";
 import { RiCloseFill } from "react-icons/ri";
 
-function MenuIcon({ uiState, setUiState }) {
+function MenuIcon({ uistate, setUiState }) {
     const libraryCloseHandler = () => {
-        setUiState({ ...uiState, libraryShown: false });
+        setUiState({ ...uistate, libraryShown: false });
     };
     return (
         <RiCloseFill

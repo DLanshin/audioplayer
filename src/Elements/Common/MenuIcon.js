@@ -1,9 +1,9 @@
 import React from "react";
 import { RiMenu4Fill } from "react-icons/ri";
 
-function MenuIcon({ uiState, setUiState }) {
+function MenuIcon({ uistate, setUiState }) {
     const navHandler = () => {
-        setUiState({ ...uiState, aboutShown: true });
+        setUiState({ ...uistate, aboutShown: true });
     };
     return <RiMenu4Fill className="menu__icon" onClick={navHandler} />;
 }

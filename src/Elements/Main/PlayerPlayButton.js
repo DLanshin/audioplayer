@@ -6,7 +6,7 @@ import colors from "../../Utils/Colors";
 import gradients from "../../Utils/Gradients";
 
 function PlayerPlayButton({
-    uiState,
+    uistate,
     setUiState,
     songState,
     audioRef,
@@ -14,8 +14,8 @@ function PlayerPlayButton({
 }) {
     const currentPalette = songState.currentSong[0].palette;
     const playPauseHandler = () => {
-        setUiState({ ...uiState, songPlaying: !uiState.songPlaying });
-        if (uiState.songPlaying === true) {
+        setUiState({ ...uistate, songPlaying: !uistate.songPlaying });
+        if (uistate.songPlaying === true) {
             audioRef.current.pause();
             setSongState({ ...songState, isPlaying: false });
         } else {
@@ -25,7 +25,7 @@ function PlayerPlayButton({
     };
 
     const PlayPauseButton = () => {
-        if (uiState.songPlaying) {
+        if (uistate.songPlaying) {
             return (
                 <IoIosPause className="player__control-icon player__control-icon--white" />
             );

@@ -1,11 +1,11 @@
 import React from "react";
 import AboutHeaderTitle from "../../Elements/About/AboutHeaderTitle";
 import AboutHeaderCloseIcon from "../../Elements/About/AboutHeaderCloseIcon";
-function MenuHeader({ uiState, setUiState }) {
+function MenuHeader({ uistate, setUiState }) {
     return (
         <nav className="nav__header">
             <AboutHeaderTitle />
-            <AboutHeaderCloseIcon uiState={uiState} setUiState={setUiState} />
+            <AboutHeaderCloseIcon uistate={uistate} setUiState={setUiState} />
         </nav>
     );
 }

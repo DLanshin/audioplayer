@@ -10,7 +10,7 @@ import songData from "../../Data/SongData";
 import PlayerPlayButton from "../../Elements/Main/PlayerPlayButton";
 
 function PlayerControl({
-    uiState,
+    uistate,
     setUiState,
     songState,
     setSongState,
@@ -59,12 +59,12 @@ function PlayerControl({
     };
 
     const darkModeToggleHandler = () => {
-        setUiState({ ...uiState, darkMode: !uiState.darkMode });
+        setUiState({ ...uistate, darkMode: !uistate.darkMode });
     };
 
     const libraryToggleHandler = (e) => {
         if (window.visualViewport.width < 900) {
-            setUiState({ ...uiState, libraryShown: true });
+            setUiState({ ...uistate, libraryShown: true });
             console.log("changed");
         }
     };
@@ -83,7 +83,7 @@ function PlayerControl({
     };
 
     const DarkModeButton = () => {
-        if (!uiState.darkMode) {
+        if (!uistate.darkMode) {
             return (
                 <RiMoonLine
                     className="player__control-icon"
@@ -103,7 +103,7 @@ function PlayerControl({
     return (
         <div className="player__control">
             <RiPlayListLine
-                uiState={uiState}
+                uistate={uistate}
                 setUiState={setUiState}
                 className="player__control-icon disabled-on-desktop"
                 onClick={libraryToggleHandler}
@@ -113,7 +113,7 @@ function PlayerControl({
                 onClick={previousSongHandler}
             />
             <PlayerPlayButton
-                uiState={uiState}
+                uistate={uistate}
                 setUiState={setUiState}
                 setSongState={setSongState}
                 songState={songState}

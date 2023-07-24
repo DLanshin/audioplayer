@@ -1,9 +1,9 @@
 import React from "react";
 import { RiCloseFill } from "react-icons/ri";
 
-function AboutHeaderCloseIcon({ uiState, setUiState }) {
+function AboutHeaderCloseIcon({ uistate, setUiState }) {
     const aboutCloseHandler = () => {
-        setUiState({ ...uiState, aboutShown: false });
+        setUiState({ ...uistate, aboutShown: false });
     };
     return <RiCloseFill className="menu__icon" onClick={aboutCloseHandler} />;
 }

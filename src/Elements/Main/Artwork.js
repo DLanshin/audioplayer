@@ -2,7 +2,7 @@ import React from "react";
 import colors from "../../Utils/Colors";
 import shadow from "../../Utils/Shadows";
 
-function Artwork({ uiState, songState }) {
+function Artwork({ uistate, songState }) {
     const currentPalette = songState.currentSong[0].palette;
 
     return (
@@ -24,7 +24,7 @@ function Artwork({ uiState, songState }) {
                 className={`artwork__img`}
                 style={{
                     animation: "spinning 7s infinite linear",
-                    animationPlayState: uiState.songPlaying
+                    animationPlayState: uistate.songPlaying
                         ? "running"
                         : "paused",
                 }}

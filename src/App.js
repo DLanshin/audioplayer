@@ -16,7 +16,7 @@ const App = observer(() => {
     const {expandApp, colorScheme} = useTelegram();
     const {isLoading, songs} = AudioStore;
     // UI Components State
-    const [uiState, setUiState] = useState({
+    const [uistate, setUiState] = useState({
         aboutShown: false,
         libraryShown: false,
         libraryPinned: false,
@@ -45,9 +45,6 @@ const App = observer(() => {
     // Reference for the audio
     const audioRef = useRef(null);
 
-    // Setting the background as the cover artwork
-    document.body.style.backgroundImage = `url('${songState.currentSong[0] ? songState.currentSong[0].coverUrl : ""}')`;
-
     const songEndHandler = async () => {
         let currentIndex = songs.findIndex(
             (song) => song === songState.currentSong[0]
@@ -75,16 +72,16 @@ const App = observer(() => {
     return (
         <div
             className={`app__wrapper ${
-                uiState.darkMode ? "dark-mode" : "light-mode"
+                uistate.darkMode ? "dark-mode" : "light-mode"
             }`}
             style={{
                 backdropFilter: `${
-                    uiState.libraryShown || uiState.aboutShown
+                    uistate.libraryShown || uistate.aboutShown
                         ? "none"
                         : "blur(1.5rem)"
                 }`,
                 WebkitBackdropFilter: `${
-                    uiState.libraryShown || uiState.aboutShown
+                    uistate.libraryShown || uistate.aboutShown
                         ? "none"
                         : "blur(1.5rem)"
                 }`,
@@ -92,25 +89,25 @@ const App = observer(() => {
         >
             {/* The menu header only displays the menu options */}
             {/* It only needs access to isNavMenuShown, setNavMenuShown, */}
-            <MenuHeader uiState={uiState} setUiState={setUiState} />
-            <Artwork uiState={uiState} songState={songState} />
+            <MenuHeader uistate={uistate} setUiState={setUiState} />
+            <Artwork uistate={uistate} songState={songState} />
             <SongInfo songState={songState} />
             <Player
-                uiState={uiState}
+                uistate={uistate}
                 setUiState={setUiState}
                 audioRef={audioRef}
                 songState={songState}
                 setSongState={setSongState}
             />
             <Library
-                uiState={uiState}
+                uistate={uistate}
                 setUiState={setUiState}
                 songState={songState}
                 setSongState={setSongState}
                 songData={AudioStore.songs}
                 audioRef={audioRef}
             />
-            <About uiState={uiState} setUiState={setUiState} />
+            <About uistate={uistate} setUiState={setUiState} />
             <audio
                 ref={audioRef}
                 src={songState.currentSong[0] ? songState.currentSong[0].audio : null}

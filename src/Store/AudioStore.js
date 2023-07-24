@@ -11,7 +11,8 @@ class AudioStore {
     }
 
     async fetch() {
-        await $api.get(`${process.env.REACT_APP_API_URL}/get_audio`).then(({data}) => {
+        const params = new URLSearchParams([['token', process.env.REACT_APP_API_TOKEN]]);
+        await $api.get(`${process.env.REACT_APP_API_URL}/get_audio`, { params }).then(({data}) => {
             this.isLoading = false
             this.songs = data.data;
         });

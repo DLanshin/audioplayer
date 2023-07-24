@@ -7,7 +7,7 @@ import AboutQuestionAnswer from "../Elements/About/AboutQuestionAnswer";
 import AboutImg from "../Elements/About/AboutImg";
 import {RiInstagramLine, RiLinkedinBoxFill, RiMailLine, RiTelegramLine} from "react-icons/ri";
 
-function About({ uiState, setUiState }) {
+function About({ uistate, setUiState }) {
     let questionOne = "Обо мне";
     let answerOne =
         "дипломированный психолог, степень магистра, сертифицированный коуч, автор курсов, мои программы и консультации прошли 800+ человек";
@@ -20,8 +20,8 @@ function About({ uiState, setUiState }) {
 
 
     return (
-        <div className={`about ${uiState.aboutShown ? "" : "about--hidden"}`}>
-            <AboutHeader uiState={uiState} setUiState={setUiState} />
+        <div className={`about ${uistate.aboutShown ? "" : "about--hidden"}`}>
+            <AboutHeader uistate={uistate} setUiState={setUiState} />
             <div className="about__wrapper">
                 {/* Need our headline */}
                 <div className="about-group">

@@ -74,3 +74,31 @@ $clamp-song-info-gap: clamp(0.5rem, 3vw, 3rem);
 $height-seek-bar: 1rem;
 $height-seek-bar-thumb: 2rem;
 $height-artwork: 24rem;
+
+$bg_color:var(--tg-theme-bg-color);
+$text_color:var(--tg-theme-text-color);
+$hint_color:var(--tg-theme-hint-color);
+$link_color:var(--tg-theme-link-color);
+$button_color:var(--tg-theme-button-color);
+$button_text_color: var(--tg-theme-button-text-color);
+$secondary_bg_color:var(--tg-theme-secondary-bg-color);
+
+
+//light
+//$bg_color:#ffffff;
+//$text_color:#424242;
+//$hint_color:#c3c3c3;
+//$link_color:#51b1fc;
+//$button_color:#51b1fc;
+//$button_text_color: #ffffff;
+//$secondary_bg_color: #f9f9fa;
+
+//dark
+$bg_color:#181819;
+$text_color:#ffffff;
+$hint_color:#7d7d7d;
+$link_color:#60aed9;
+$button_color:#5bb1e3;
+$button_text_color: #ffffff;
+$secondary_bg_color: #000000;
+

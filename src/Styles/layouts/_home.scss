@@ -33,12 +33,12 @@
 }
 
 .dark-mode {
-    background: linear-gradient(135deg, #313131cb 0%, #000000cb 100%);
-    color: $color-white;
+    background: $bg_color;
+    color: $text_color;
 }
 .light-mode {
-    background: linear-gradient(135deg, #e6e9f0c5 0%, #eef1f5c5 100%);
-    color: $color-darkmode;
+    background: $bg_color;
+    color: $text_color;
 }
 
 // Grid Layout for the desktop

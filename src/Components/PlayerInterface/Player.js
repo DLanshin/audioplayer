@@ -2,7 +2,7 @@ import React from "react";
 import PlayerControl from "../Main/PlayerControl";
 import SeekControl from "../Main/SeekControl";
 function Player({
-    uiState,
+    uistate,
     setUiState,
     songState,
     setSongState,
@@ -12,7 +12,7 @@ function Player({
     return (
         <div className="player">
             <SeekControl
-                uiState={uiState}
+                uistate={uistate}
                 setUiState={setUiState}
                 songState={songState}
                 setSongState={setSongState}
@@ -20,7 +20,7 @@ function Player({
                 seekWidth={seekWidth}
             />
             <PlayerControl
-                uiState={uiState}
+                uistate={uistate}
                 songState={songState}
                 setUiState={setUiState}
                 setSongState={setSongState}
