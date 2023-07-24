@@ -4,7 +4,8 @@
         width: 8rem;
 
         & img {
-            height: 100%;
+            width: 80px;
+            height: 80px;
             border-radius: $border-radius-circle;
             border: $border-library-cover;
         }

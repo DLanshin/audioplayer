@@ -6,7 +6,6 @@ import {
     RiSkipBackLine,
     RiSkipForwardLine,
 } from "react-icons/ri";
-import songData from "../../Data/SongData";
 import PlayerPlayButton from "../../Elements/Main/PlayerPlayButton";
 import AudioStore from "../../Store/AudioStore";
 
@@ -18,8 +17,7 @@ function PlayerControl({
     audioRef,
 }) {
     const {isLoading, songs} = AudioStore;
-
-    let currentIndex = songData.findIndex(
+    let currentIndex = songs.findIndex(
         (song) => song === songState.currentSong[0]
     );
 
@@ -51,6 +49,7 @@ function PlayerControl({
 
     const nextSongHandler = () => {
         setTimeout(() => {
+            debugger
             setSongState({
                 ...songState,
                 currentSong: [songs[(currentIndex + 1) % songs.length]],

@@ -20,6 +20,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   text-shadow: 0px 0px 15px #c5c5c53b;
+  iframe{
+    display: none!important;
+    z-index: -1!important;
+  }
 }
 
 :root {

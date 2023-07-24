@@ -2,9 +2,8 @@ import React from "react";
 import colors from "../../Utils/Colors";
 import shadow from "../../Utils/Shadows";
 
-function Artwork({ uistate, songState }) {
+const Artwork = ({ uistate, songState }) => {
     const currentPalette = songState.currentSong[0].palette;
-
     return (
         <div
             className="artwork"
@@ -19,7 +18,7 @@ function Artwork({ uistate, songState }) {
             }}
         >
             <img
-                src={`${songState.currentSong[0].coverUrl}`}
+                src={`${songState.currentSong[0].thumbUrl}`}
                 alt="Album Art"
                 className={`artwork__img`}
                 style={{

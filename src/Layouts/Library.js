@@ -10,7 +10,6 @@ function Library({
     songData,
     audioRef,
 }) {
-    console.log(songData[0])
 
     return (
         <div

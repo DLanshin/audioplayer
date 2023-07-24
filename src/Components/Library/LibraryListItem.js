@@ -14,10 +14,8 @@ function LibraryListItem({ song, setSongState, songState, audioRef }) {
                 ...songState,
                 currentSong: [songs[songs.findIndex((s) => s === song)]],
             });
-            console.log(songState.isPlaying);
             if (songState.isPlaying) {
                 const playPromise = audioRef.current.play();
-                console.log(playPromise);
                 if (playPromise !== undefined) {
                     console.log("undefined");
                     playPromise.then((audio) => {
