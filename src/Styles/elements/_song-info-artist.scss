@@ -4,6 +4,7 @@
         text-align: center;
         font-weight: $font-weight-song-info-artist;
         transition: color 300ms;
+        color:$button_color;
     }
 }
 @media only screen and (min-width: 900px) {

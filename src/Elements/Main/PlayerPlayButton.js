@@ -40,16 +40,6 @@ function PlayerPlayButton({
         <div
             className="player__control--play-button"
             onClick={playPauseHandler}
-            style={{
-                boxShadow: `${shadow(
-                    0,
-                    0,
-                    15,
-                    0,
-                    colors[`${currentPalette}`]
-                )}`,
-                background: `${gradients[`${currentPalette}`]}`,
-            }}
         >
             <PlayPauseButton />
         </div>

@@ -8,6 +8,7 @@
         justify-content: center;
         cursor: pointer;
         transition: background 300ms;
+        background-color: $button_color;
     }
 
     &-icon {

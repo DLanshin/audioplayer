@@ -21,14 +21,6 @@ function PlayerSeekBar({ songState, audioRef, setSongState }) {
             <div
                 className="player__seek-bar--gradient"
                 style={{
-                    boxShadow: `${shadow(
-                        0,
-                        0,
-                        30,
-                        0,
-                        colors[`${currentPalette}`]
-                    )}`,
-                    background: `${gradients[`${currentPalette}`]}`,
                     width: `${(songState.elapsed / songState.duration) * 100}%`,
                 }}
             ></div>

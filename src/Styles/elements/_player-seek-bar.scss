@@ -36,6 +36,7 @@
         &--gradient {
             max-width: 100%;
             height: $height-seek-bar;
+            background-color: $button_color;
             position: absolute;
             top: 0;
             border-radius: 50rem;
