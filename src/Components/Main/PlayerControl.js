@@ -49,7 +49,6 @@ function PlayerControl({
 
     const nextSongHandler = () => {
         setTimeout(() => {
-            debugger
             setSongState({
                 ...songState,
                 currentSong: [songs[(currentIndex + 1) % songs.length]],

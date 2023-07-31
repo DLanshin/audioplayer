@@ -31,7 +31,6 @@ function PlayerSeekBar({ songState, audioRef, setSongState }) {
                 onChange={playerSeekHandler}
                 type="range"
                 className="player__seek-bar"
-                defaultValue={0}
             />
         </div>
     );
