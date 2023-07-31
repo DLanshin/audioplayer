@@ -24,6 +24,8 @@ function Library({
                         key={song.id}
                         song={song}
                         songState={songState}
+                        uistate={uistate}
+                        setUiState={setUiState}
                         setSongState={setSongState}
                         audioRef={audioRef}
                     />

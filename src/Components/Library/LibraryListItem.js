@@ -4,7 +4,7 @@ import LibrarySongCover from "../../Elements/Library/LibrarySongCover";
 import LibrarySongTitle from "../../Elements/Library/LibrarySongTitle";
 import AudioStore from "../../Store/AudioStore";
 
-function LibraryListItem({ song, setSongState, songState, audioRef }) {
+function LibraryListItem({ song, setSongState, uistate, setUiState, songState, audioRef }) {
 
     const {songs} = AudioStore;
 
@@ -23,6 +23,7 @@ function LibraryListItem({ song, setSongState, songState, audioRef }) {
                     });
                 }
             }
+            setUiState({...uistate, libraryShown: false})
         }, 150);
     };
     return (
